@@ -17,20 +17,20 @@
   </head>
   <body ng-app="30daysApp">
   <div layout="column" layout-fill>
-  <md-toolbar>
-    <div class="md-toolbar-tools">
-      <span>My App's Title</span>
-      <!-- fill up the space between left and right area -->
-      <span flex></span>
-      <md-button>
-        Right Bar Button
-      </md-button>
-    </div>
-  </md-toolbar>
-  <md-content>
-    Hello!
-  </md-content>
-</div>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <span><b>30</b>Days<i><small>'challenger</small></i></span>
+        <span flex></span>
+        <md-button class="md-icon-button">
+        <md-icon md-svg-icon="menu"></md-icon>
+
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-content>
+       <div ng-view class="view-animate"></div>
+    </md-content>
+  </div>
    <!--  <div layout="column" layout-fill>
       <md-toolbar>
         <div class="md-toolbar-tools">
@@ -75,6 +75,8 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/task.js"></script>
+        <script src="scripts/controllers/task/index.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -16,21 +16,27 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngMaterial'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $mdThemingProvider, $mdIconProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'views/task/index.html',
+        controller: 'TaskCtrl',
+        controllerAs: 'task'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+     
       .otherwise({
         redirectTo: '/'
       });
+       $mdThemingProvider.theme('default')
+        .primaryPalette('blue')
+        .accentPalette('lime');
+      $mdIconProvider.defaultIconSet('../styles/mdi.svg');
   });
