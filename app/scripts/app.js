@@ -20,11 +20,8 @@ angular
     'ngMaterial',
     'ngNotify'
   ])
-  .config(function ($routeProvider, $mdThemingProvider, $mdIconProvider, ngNotify) {
-    ngNotify.config({
-      position: 'top',
-    });
-    $routeProvider
+  .config(function ($routeProvider, $mdThemingProvider, $mdIconProvider) {
+      $routeProvider
       .when('/', {
         templateUrl: 'views/challenger/index.html',
       })
