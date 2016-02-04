@@ -17,21 +17,26 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ngMaterial'
+    'ngMaterial',
+    'ngNotify'
   ])
-  .config(function ($routeProvider, $mdThemingProvider, $mdIconProvider) {
+  .config(function ($routeProvider, $mdThemingProvider, $mdIconProvider, ngNotify) {
+    ngNotify.config({
+      position: 'top',
+    });
     $routeProvider
       .when('/', {
-        templateUrl: 'views/task/index.html',
-        controller: 'TaskCtrl',
-        controllerAs: 'task'
+        templateUrl: 'views/challenger/index.html',
+      })
+      .when('/new', {
+        templateUrl: 'views/challenger/new.html',
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-     
+
       .otherwise({
         redirectTo: '/'
       });

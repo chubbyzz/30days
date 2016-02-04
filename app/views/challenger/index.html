@@ -1,0 +1,22 @@
+<md-divider></md-divider>
+<md-content>
+  <md-grid-list md-cols="4" md-row-height="90px" class="soft-blue">
+    <md-grid-tile  md-rowspan="2" md-colspan="1">
+      <md-grid-tile-footer>
+        Jeff.
+      </md-grid-tile-footer>
+    </md-grid-tile>
+  </md-grid-list>
+</md-content>
+<div class="sub-top-30" layout="row" layout-align="end center" layout-margin>
+  <md-button class="md-fab" ng-href="#/new">
+    <md-icon md-svg-icon="plus"></md-icon>
+  </md-button>
+</div>
+
+<md-content layout="row" layout-padding layout-wrap layout-fill ng-cloak ng-controller="ChallengerCtrl">
+  <div class="md-whiteframe-3dp" flex="100"  layout-padding ng-repeat="challenger in challengers">
+    <h3> {{ challenger.title }} </h3><br>
+    <p> {{ challenger.description }} </p>
+  </div>
+</md-content>
