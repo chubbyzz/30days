@@ -9,14 +9,24 @@
  */
 angular.module('30daysApp')
   .controller('ChallengerCtrl', ['$scope', 'challengerFactory', '$location', 'ngNotify', function ($scope, challengerFactory, $location, ngNotify) {
+    $scope.errors = [];
+
+
     $scope.save = function(){
       challengerFactory.save($scope.challenger)
         .success(function(data){
-          ngNotify.set("Challenger save successfully", 'success');
+          ngNotify.set("Challenger save successfully",
+            {
+              position: 'top',
+              type: 'success'
+            }
+          );
           $location.path('#/');
         })
-        .error(function(data){
-          console.log(data);
+        .error(function(data, status){
+          if (status = 400) {
+            $scope.errors = data.errors
+          }
         });
     };
 

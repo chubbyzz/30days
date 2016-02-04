@@ -4,6 +4,12 @@
       <md-input-container>
         <label>Title</label>
         <input type="text" ng-model="challenger.title"/>
+
+      </md-input-container>
+      <md-input-container>
+        <div ng-message="error" ng-if="errors.hasOwnProperty('title')">
+          <div ng-message="error" ng-repeat="error in errors.title ">{{ error }}</div>
+        </div>
       </md-input-container>
     </md-content>
     <md-content>
@@ -11,11 +17,21 @@
         <label>Description</label>
         <textarea ng-model="challenger.description" columns="1" rows="5"></textarea>
       </md-input-container>
+      <md-input-container>
+        <div ng-message="error" ng-if="errors.hasOwnProperty('description')">
+          <div ng-message="error" ng-repeat="error in errors.description ">{{ error }}</div>
+        </div>
+      </md-input-container>
     </md-content>
     <md-content>
       <md-input-container>
         <label>Duration</label>
         <input type="number" ng-model="challenger.duration" ng-init="challenger.duration = 30"/>
+      </md-input-container>
+      <md-input-container>
+        <div ng-message="error" ng-if="errors.hasOwnProperty('duration')">
+          <div ng-message="error" ng-repeat="error in errors.duration ">{{ error }}</div>
+        </div>
       </md-input-container>
     </md-content>
     <md-content layout="row" layout-align="end center" ng-click="save()">
