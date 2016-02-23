@@ -19,6 +19,9 @@ angular.module('30daysApp')
       },
       save: function(challenger) {
         return $http.post(url + "/create", {challenger: challenger});
+      },
+      findBySlug: function(slug) {
+        return $http.get(url + "/" + slug);
       }
     };
     return factory;

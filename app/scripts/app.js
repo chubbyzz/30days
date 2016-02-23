@@ -28,10 +28,8 @@ angular
       .when('/new', {
         templateUrl: 'views/challenger/new.html',
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/:challenger', {
+        templateUrl: 'views/challenger/show.html',
       })
 
       .otherwise({
